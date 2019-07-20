@@ -21,27 +21,6 @@
 <script>
     var ary = ["原创微视频 | 习近平眼中的科技创新", "在内蒙古，习近平讲了这样一堂“公开课", "做好立法监督等工作 更好助力经济社会发展和改革攻坚", "环球时报：中美谁在铸成历史错误，实践说了算", "人民日报：多开路 少添堵（国际论坛） 延安脱贫了"];
     var list = document.getElementById("List");
-
-    /* for (let i = 0; i < ary.length; i++) {
-        var elis = document.createElement("li");
-        elis.innerHTML = ary[i]
-        list.appendChild(elis)
-    } */
-
-    /* var frg = document.createDocumentFragment()
-    for (let i = 0; i < ary.length; i++) {
-        var elis = document.createElement("li");
-        elis.innerHTML = ary[i]
-        frg.appendChild(elis)
-    }
-    list.appendChild(frg) */
-
-    // var str = "";
-    // for (let i = 0; i < ary.length; i++) {
-    //     str+="<li>" + ary[i] + "</li>"
-    // }
-    // list.innerHTML = str
-
     var str = ``;
     for (let i = 0; i < ary.length; i++) {
         str += `<li>${ary[i]}</li>`
