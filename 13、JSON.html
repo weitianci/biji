@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // var obj = {"a":1};      //JSON格式对象
+    // var str = '{"a":1}';    //JSON格式字符串
+
+    //JSON.parse：将JSON格式的字符串转换成JSON格式的对象
+    // var s = JSON.parse(str)
+    // console.log(s);
+
+    //JSON.stringify：将JSON格式的对象转换成JSON格式的字符串
+    var obj = {a:1,b:{c:2}};
+    //深克隆：对obj对象进行深克隆改变原有对象的值时，不会影响新克隆的对象，新对象中的空间地址和原来不指向同一个空间；
+    var obj1 = JSON.parse(JSON.stringify(obj));
+    obj1.b.c=200
+    console.log(obj)
+    console.log(obj1)
+    
+</script>
+</html>

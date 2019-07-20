@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div" data-a="123">
+        <p>123</p>
+    </div>
+</body>
+<script>
+    var eBody = document.body
+    var eDiv = document.getElementById("div")
+    var eP = document.querySelector("#div>p")
+
+    // 1、createElement：创建元素（没有在html结构中）
+    var eSpan = document.createElement("span")
+    eSpan.innerHTML="Hello World"
+
+    // 2、appendChild：在父元素的末尾添加子元素 （在html结构中）
+    //  用法：父元素.appendChild（需要添加的元素）
+    eBody.appendChild(eSpan)
+
+    // 3、insertBefore：在父元素下的某个子元素前面添加子元素
+    //  用法：父元素.insertBefore（需要添加的元素，位置（某个元素的前面或id））
+    //eDiv.insertBefore(eSpan,eP)
+
+    // 4、removeChild：删除父元素中的子元素
+    //  用法：父元素.removeChild（需要删除的元素）
+    //eDiv.removeChild(eP)
+
+    // 5、replaceChild：替换父元素中的子元素
+    //  用法：父元素.replaceChild（新元素，旧元素）
+    eDiv.replaceChild(eSpan,eP)
+
+    // 6、cloneNode：克隆元素，不传参数或传false是浅克隆，只克隆元素本身；
+    //  参数是true是深克隆，克隆元素自身以及元素包含的所有元素
+    //var eNewDiv = eDiv.cloneNode(true);
+    //console.log(eNewDiv)
+    //document.body.appendChild(eNewDiv);
+
+    // 7、getAttribute：获取行间属性名的属性值
+    // var a = eDiv.getAttribute("data-a")
+    // console.log(a)
+
+    // 8、setAttribute：设置已有或添加新的行间属性名和属性值
+    //  用法：元素.setAttribute("行间属性名","行间属性值")
+    // eDiv.setAttribute("data-b","hello")
+
+    // 9、removeAttribute：删除行间属性
+    // eDiv.removeAttribute("data-a")
+
+    // 10、classList：添加class并设置class值
+    // eDiv.classList.add("a", "b");     //添加class的值（可以是多个值）
+    // eDiv.classList.remove("a")        //删除class的值
+    // eDiv.classList.replace("a", "c"); //替换class的值
+    //eDiv.classList.replace(旧的class, 新的class);
+</script>
+</html>

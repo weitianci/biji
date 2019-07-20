@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    // 1、toUpperCase();将字符串中的字符都转成大写
+        // "aBc".toUpperCase();
+
+    // 2、toLowerCase();将字符串中的字符都转成小写
+        // var str = "aBC";
+        // var newStr = str.toLowerCase();
+        // console.log(newStr);
+        // console.log(str);
+
+    // 3、charAt()通过索引取对应的字符 // str[3]
+        // var str = "abcdef";
+        // var code = str.charAt(3);   
+        // console.log(code);
+
+    // 4、charCodeAt(); 通过索引取字符，返回unicode码
+        // a-z 97-122;  A-Z 65-90; 0-9 48-57 \u4e100-\u9fa5
+        // var str = "啊";
+        // var code = str.charCodeAt(0);  
+        // console.log(code); 
+
+    // 5、indexOf，检测某个字符、某一串字符在字符串中出现的位置，返回第一次匹配的索引，不匹配返回-1；
+        // var str = "abcdefb";
+        // var index = str.indexOf("b");
+        // console.log(index);
+
+    // 6、lastIndexOf(),检测某个字符、某一串字符在字符串中出现的位置，返回最后一次匹配的索引，不匹配返回-1
+        // var str = "abcdef";
+        // var index = str.lastIndexOf("b");
+        // console.log(index);
+
+    // 7、substr(m, n) 截取字符串, m是起始位置的索引，n截取的长度
+        // var str = "abcdef";
+        // var newStr = str.substr(1, 2);
+        // console.log(newStr);
+
+    // 8、substring(m, n); 截取字符串，m起始位置的索引，n结束位置的索引(包前不包后)
+        // var str = "abcdef";
+        // var newStr = str.substring(-1, 3);
+        // console.log(newStr);
+
+    // 9、slice(m, n); 截取字符串，m起始位置的索引，n结束位置的索引(包前不包后)
+        // slice参数支持负数，如果是负数，会先将负数加字符串长度，再截取；
+        // var str = "abcdef";
+        // var newStr = str.slice(1, -1);
+        // console.log(newStr);
+        // substring和slice方法一样，slice支持负数
+
+    // 10、replace(m,n)，替换 m旧的字符， n新字符
+        // var str = "2019-06-12";
+        // // var newStr = str.replace("-", "/");
+        // // newStr = newStr.replace("-", "/");
+        // // var newStr = str.replace("-", "/").replace("-", "/");
+        // // var newStr = str.replace(/-/g, "/");
+        // console.log(newStr);
+        // console.log(str);
+
+    // 11、concat，拼接字符串; + 
+        // var str = "abc";
+        // var newStr = str.concat("def", "123");
+        // var newStr = str + "def" + "123";
+        // console.log(newStr);
+
+    // 12、split，将字符串按照指定的字符分割，拆分成一个数组
+        // split将字符串拆成数组，join将数组拼接成字符串
+        // var str = "abc-def-xyz";
+        // var ary = str.split("-");
+        // console.log(ary);
+        // var str1 = ary.join("-");
+        // console.log(str1);
+
+    // 13、eval()
+        // 作用：字符串求和
+        // var sum = eval("10*10+5");//105
+
+    // 14、trim(), 去字符串两端的空格
+        // trimLeft() 去掉左空个
+        // trimRight() 去掉右空格
+        // var str = " 2446211137 ";
+        // var newStr = str.trim();
+        // console.log(str);
+        // console.log(newStr);
+        // console.log(newStr.length);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+<script>
+    var divs = document.getElementsByTagName("div")
+    function toArray(likeAry) {
+        var ary = [];
+        try {
+            // 当try语句报错,就会走catch，如果try语句正常运行，那么catch不会执行
+            ary = Array.prototype.slice.call(likeAry)
+        } catch (error) {
+            // console.log(error) catch形参代表报错信息
+            for (var i = 0; i < likeAry.length; i++) {
+                ary[i] = likeAry[i];
+            }
+        }
+        return ary;
+    }
+    console.log(toArray(divs));
+</script>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        var eBox = document.getElementById("box");
+        // Date,创建时间对象 new Date(); 获取的是本地时间
+        var date = new Date();
+        // 获取年
+        var y = date.getFullYear();
+        // 获取月，从0开始，需要+1
+        var m = date.getMonth() + 1;
+        // 获取日
+        var d = date.getDate();
+        // 获取时（几点）
+        var h = date.getHours();
+        // 获取分
+        var mi = date.getMinutes();
+        // 获取秒
+        var s = date.getSeconds();//毫秒getMilliseconds
+        // 获取星期几 0-6
+        var day = date.getDay();
+        // 时间戳(一串数字，毫秒)
+        var t = date.getTime();
+
+        function fn(n){
+            if (n<10) {
+                n="0"+n
+            }
+            return n
+        }
+        eBox.innerHTML=y+"/"+fn(m)+"/"+fn(d)+" "+fn(h)+":"+fn(mi)+":"+fn(s)+" "+"星期:"+day+" "+t
+    </script>
+</body>
+
+</html>

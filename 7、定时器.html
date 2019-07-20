@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div">暂停</div>
+</body>
+<script>
+    var Div = document.getElementById("div")
+    var n = setInterval(function(a,b){
+        console.log(100)
+        console.log(a,b)
+    },1000,1,2)
+    Div.onclick=function (){
+        clearInterval(n)
+    }
+    // setInterval 每过一段时间执行一次
+    // setTimeout  过了一段时间执行一次
+    // clearTimeout 清除定时器
+    // clearInterval 清除定时器
+    
+</script>
+</html>

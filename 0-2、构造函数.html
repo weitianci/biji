@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function fn(na, ag) {
+        this.name = na;
+        this.age = ag
+    }
+    var boy = new fn("小明", 20)
+    var girl = new fn("小红", 19)
+    console.log(boy.name)
+    console.log(girl.name)
+
+    // 1、如果构造函数内部有return语句，而且return后面跟着一个复杂数据类型（对象，数组等），new命令会返回return语句指定的对象；如果return语句后面跟着一个简单数据类型（字符串，布尔值，数字等），则会忽略return语句，返回this对象。
+    // function Keith() {
+    //     this.height = 180;
+    //     return {
+    //         height: 200
+    //     };
+    // }
+    // var boy = new Keith();
+    // console.log(boy.height); //200
+
+    // function Keith() {
+    //     this.height = 100;
+    //     return 200;
+    // }
+    // var boy = new Keith();
+    // console.log(boy.height); //100
+
+    // 2、 如果对普通函数（内部没有this关键字的函数）使用new命令，则会返回一个空对象。
+    // function Keith() {
+    //     return 'this is a message';
+    // }
+    // var boy = new Keith();
+    // console.log(boy); // Keith {}
+    // 3、 上面代码中，对普通函数Keith使用new命令，会创建一个空对象。这是因为new命令总是返回一个对象，要么是实例对象，要么是return语句指定的对象或数组。本例中，return语句返回的是字符串，所以new命令就忽略了该语句。
+</script>
+
+</html>

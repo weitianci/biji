@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <span>上一个兄弟元素</span>
+    <div id="div">
+        <p>第一个子元素</p>
+        <p>最后一个子元素</p>
+    </div>
+    <ul>下一个兄弟元素</ul>
+</body>
+<script>
+    // 节点：描述html结构
+    //                  nodeType    nodeValue      nodeName
+    // 元素节点（标签）     1           null       大写的标签名
+    // 文本节点            3         文本的内容       #text
+    // 注释节点            8         注释的内容      #comment
+    // document（根节点）  9            null        #document
+
+    var eBox = document.getElementById("div");
+    console.log(eBox.parentNode)             //（1） 获取父标签
+
+    console.log(eBox.previousSibling)        //（2） 上一个兄弟节点
+    console.log(eBox.firstChild)             //（3） 第一个子节点
+    console.log(eBox.childNodes)             //（4） 获取所有子节点
+    console.log(eBox.lastChild)              //（5） 最后一个子节点
+    console.log(eBox.nextSibling)            //（6） 下一个兄弟节点
+
+    console.log(eBox.previousElementSibling) //（7） 上一个兄弟元素 (IE8 以下不兼容)
+    console.log(eBox.firstElementChild)      //（8） 第一个子元素
+    console.log(eBox.children)               //（9） 获取所有子元素
+    console.log(eBox.lastElementChild)       //（10）最后一个子元素
+    console.log(eBox.nextElementSibling)     //（11）下一个兄弟元素
+
+    //获取元素（标签）的方法
+    document.getELementById()                //（1）通过id获取
+    document.getELementsByClassName()        //（2）通过class名获取 (类数组集合，设置“style”时需要在后面加索引[0])
+    document.getElementsByTagName()          //（3）通过标签名获取 (类数组集合)
+    document.getElementsByName()             //（4）通过name名获取表单元素 (类数组集合)
+    document.querySelector("ul>li");         //（5）通过选择器获取一个元素("#id>li") // "#id",".class"
+    document.querySelectorAll(".class");     //（6）通过选择器获取所有的元素("#id",".class")
+    document.body                            //（7）获取body
+    document.documentElement                 //（8）获取html
+    document.createDocumentFragment();       //（9）创建文档碎片(减少了DOM的回流次数，提高了浏览器的性能)
+</script>
+
+</html>

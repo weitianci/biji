@@ -1,0 +1,252 @@
+我们知道JavaScript属于解释型语言，JavaScript的执行分为：解释和执行两个阶段,这两个阶段所做的事并不一样：
+
+解释阶段：
+    词法分析
+    语法分析
+    作用域规则确定
+执行阶段：
+    创建执行上下文
+    执行函数代码
+    垃圾回收
+
+作用域和执行上下文之间最大的区别是： 执行上下文在运行时确定，随时可能改变；作用域在定义时就确定，并且不会改变。
+
+0、报错
+    1、TypeError      抛出异常
+    2、SyntaxError    语法错误
+    3、Uncaught       未捕获
+    4、ReferenceError 引用错误（未声明变量）
+
+1、js的组成部分
+    ECMAScript
+    DOM document object model
+    BOM browser object model
+    
+1-1、用document对象来描述html结构
+    1、js中会维护一个DOM树和html的结构是一一对应的
+    2、js中修改html结构内容或者样式时，修改的是DOM，DOM和html结构是一一对应的（他们之间有映射关系）
+    
+2、定义一个对象的步骤（3步）；
+    1、在堆内存中开辟一块空间
+    2、将键值对放到开辟的空间中
+    3、把空间的地址赋值给变量
+
+2-1、object
+    1、没有length
+    2、属性名不能重复
+    3、先把数字放入堆内存
+    4、in:检测属性名是否存在
+    5、for in
+
+3、函数把实现同一个功能的代码放到函数体中，当想再次调用这个功能时，可以直接使用执行，减少了代码的冗余，实现了代码的高内聚低耦合：这就是函数的封装
+
+3.0、
+    普通函数：function fn(){}   执行：fn()
+    匿名函数：(function(){})()
+
+3.1、函数定义的三部；
+    1、在堆内存中开辟一块空间
+    2、把函数体代码以字符串的形式存在这块空间中
+    3、把空间的地址赋值给函数名
+
+3.2、函数执行（调用）(4步)
+    1、开辟一块栈内存（作用域）,每执行一次都会形成新的作用域
+    2、形参赋值
+    3、变量提升
+    4、执行函数体代码
+    5、是否销毁栈内存
+
+3.3、return
+    1、将函数体内部的值return出去，函数外面可以使用
+    2、终止函数体中的代码运行，return下面的代码不再执行
+
+3.4、闭包
+    函数形成私有的作用域之后，保护里面的私有变量不受外界的干扰，这种保护的机制就是闭包，函数外面不可以获取函数里面的变量
+
+4、Boolean()，转布尔值时，转成false的5种情况
+    ""、0、NaN、null、undefined
+
+5、innerHTML和innerText的区别
+    innerHTML和innerText是覆盖性操作,innerHTML识别标签，innerText不识别标签
+
+6、基本数据类型和引用数据类型的区别
+    基本数据类型操作的是值存在栈内存中，基本数据类型相对存储的信息量小一点
+    引用数据类型操作的是空间地址存在堆内存中，引用数据类型相对存储的信息量多一点
+
+7、数据类型都有哪些
+    基本数据类型（5种）：number、string、null、undefined、boolean
+    引用数据类型：
+        对象： 普通对象（Object）{a:1}、数组（Array）[1]、时间对象（Date）new Date()、数学对象（Math）、正则（RegExp）
+        函数： function
+
+7-1、数据类型的检测：typeof instanceof constructor Object.prototype.toString.call()
+    1、typeof：//检测数字，字符串
+        1、返回一个字符串
+        2、不能检测对象数据类型
+        3、检测null返回“object”
+        typeof {}//"object"
+        typeof []//"array"
+    2、instanceof://检测数组，对象
+        检测当前实例是否属于某个类，是返回true，不是返回false
+        console.log({} instanceof Object);//true
+        console.log([] instanceof Array);//false
+
+        function fn(name, age) {
+            if (!(this instanceof fn)) {
+                return new fn(name,age)
+            }
+            this.name = name;
+            this.age = age
+        }
+        var boy = fn("小明", 20)
+        var girl = new fn("小红", 19)
+        console.log(boy.name)
+        console.log(girl.name)
+
+8、变量的命名规范（5条）
+    1、变量名只能由数字、字母、下划线、$组成
+    2、数字不能开头
+    3、严格区分大小写
+    4、推荐使用驼峰命名法
+    5、不能使用关键字和保留字
+
+9、undefined的4中情况
+    1、变量只声明，未赋值，返回undefined
+    2、通过对象属性名获取对应的属性值时，获取不到，返回undefined
+    3、函数有形参没有对应的实参，形参的值是undefined
+    4、函数中如果没有return或return后面没有值时，返回值为undefined；
+
+10、null的4中情况
+    1、通过id获取元素时，获取不到内容，返回null
+    2、正则捕获时，捕获不到内容，返回null
+    3、使引用数据类型释放堆内存，可以给变量赋值null
+    4、获取当前元素哥哥元素节点时不存在，返回null
+
+11、for循环四步曲
+    1、定义一个变量i
+    2、条件判断
+    3、条件满足，执行循环体
+    4、i++
+
+12、变量提升情况下
+    var 只声明不赋值
+    function 声明也赋值
+
+13、
+typeof(待检测的内容)；他可以检测基本数据类型、function；但是它不能检测对象数据类型
+    console.log(typeof 1); // number
+    console.log(typeof "abc"); // string
+    console.log(typeof true); // boolean
+    console.log(typeof undefined); // undefined
+    console.log(typeof null); // object
+    console.log(typeof(typeof(true))); // string , typeof()返回结果都是字符串类型的
+
+String(); // 将其他数据类型转换成字符串类型；
+    基本数据类型转字符串，在原有的基础上加引号就可以了
+    对象转字符串，得到的结果都是"[object Object]"
+    数组转字符串，将数组的中括号去掉换成引号
+    console.log(String(NaN)); // "NaN" 
+    console.log(String(true)); // "true"
+    console.log(String(null)); // "null"
+    console.log(String(undefined)); // "undefined"
+
+Number(); // 将其他数据类型转换成数字
+    字符串转数字，如果字符串中是一个有效数字，得到的结果就是字符串中的数字，如果不是一个有效数字，返回结果是一个NaN（not a number）
+    布尔类型转数字，true为1，false为0；
+    null转数字为0
+    undefined转数字为NaN
+
+    console.log(Number("abc")); // NaN
+    console.log(Number("+123.123")); // 123.123
+    console.log(Number("123abc")); // NaN
+    console.log(Number("")); // 0
+    console.log(Number([])); // 0
+    console.log(Number(true)); // 1
+    console.log(Number(false)); // 0
+    console.log(Number(null)); // 0
+    console.log(Number(undefined)); // NaN
+
+先转成字符串（String），在转数字
+    console.log(Number({a:1})); // "[object Object]" => NaN
+    console.log(Number([])); // "" => 0
+    console.log(Number([1,2])); // "1,2" => NaN
+
+判断数据是不是NaN，如果是NaN返回为true，不是NaN返回false
+isNaN方法处理非数字类型时，会先将数据通过Number转换成数字类型（隐式转换），在判断
+    console.log(isNaN(1)); // false 
+    console.log(isNaN(NaN)); // true 
+    console.log(isNaN([])); // false
+    console.log(isNaN({})); // {} => "[object Object]" => NaN => true
+
+14、事件传播的三个阶段:
+    捕获 > 目标 > 冒泡
+
+15、全局作用域
+    1、私有变量： 在私有作用域下定义的变量就是私有变量
+    2、函数里面可以访问函数外层作用域的变量；
+    3、如果在函数体内部获取变量的值，如果当前作用域下存在这个变量，那么直接获取当前作用域下的变量，如果不存在，那么需要去上一级作用域查找；如果全局作用域也不存在，那么会报错；
+
+15-1、如何判断当前变量是一个私有变量？
+    1. 首先看在当前作用域有没有被var过
+    2. 再看当前变量有没有被function过
+    3. 形参也是私有变量
+
+16、私有作用域
+    1. 立即销毁作用域： 
+        一般情况下，当函数形成私有作用域之后，函数代码执行完之后，会立即销毁；
+    2. 不销毁的作用域需要满足两个条件
+        1. return 出一个引用数据类型
+        2. return 出的值被外界的变量接收；
+        特殊情况
+        在函数体中给元素的事件行为绑定方法，那么该作用域也不能销毁；
+
+17、this
+    1、普通函数this指向全局
+    function test() {
+        console.log(this);
+    };
+    test();
+    2、严格模式下this指向undefined
+    'use strict';
+    function test() {
+        console.log(this);
+    };
+    test();
+    3、函数前面没有".",this指向全局(window),如果有".","."前面是谁,this就指向谁
+    4、元素事件的this指向事件绑定的元素
+    5、自执行函数内的this永远指向window
+        (function (){})(this)
+        自执行函数实参里的this指向上一级作用域的this
+    6、回调函数普通模式和严格模式都指向window
+    7、构造函数的this指向它的实例
+    8、call/apply/bind 可以改变this指向
+
+17-1、this指向
+    call：
+        第一个参数是要指向函数对象，第二个参数函数的实参；
+        function.call(fn,1,2)
+
+        call继承：
+        使用方法：父函数.prototype.属性方法.call(需要继承父函数的对象)
+        Array.prototype.pop.call(ary)
+    apply：
+        第一个参数是要指向函数对象，第二个参数只能传数组或者类数组；
+        function.apply(fn,[])
+    bind：
+        预处理this；提前把this改了，但是不运行；会返回一个处理this之后的新函数，新函数运行中的this指向了bind的第一个实参；
+        function.bind(fn,1,2)
+    
+
+18、构造函数
+    只能return 引用数据类型(如：数组，对象等)
+    return 其它数据类型返回this，没有this就会忽略该语句返回空对象
+    当构造函数不需要传参的时候，执行可以省略括号
+
+19、原型链
+    父.prototype == 子.__proto__ //true
+    父函数通过prototype创建一个公共方法或指向已有的公共方法
+    子对象通过__proto__调用父函数的公共方法
+
+    1、每一个函数数据类型(函数、类)都天生自带一个prototype属性,prototype的属性值是一个对象数据类型的 
+    2、prototype的属性值天生自带一个constructor属性，其属性值指向当前原型所属的类
+    3、每一个对象数据类型天生自带一个__proto__属性，这个属性的属性值指向当前实例所属类的原型

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+// 1、冒泡排序
+    // 将相邻两项比较，将较大的一项放到后面，再拿较大的一项和后一项比较，谁比较大将谁放到后面，...，最终会把最大的一项放到最后面
+    // 重复执行冒泡操作（有几项重复几次），会将数据按照从小到大的顺序排好
+    // var ary = [1, 200, 2000, 300, 3, 33];
+
+    // // 执行几次冒泡
+    // for(var j = 0; j < ary.length-1; j++){
+    //     // j = 0, 第一次冒泡，需要比较5次
+    //     // j = 1, 第二次冒泡，需要比较4次
+    //     // j = 2，第三次冒泡，需要比较3次
+    //     // j = 3，第四次冒泡，需要比较2次
+    //     // j = 4，第五次冒泡，需要比较1次
+
+    //     // 每次冒泡执行几次比较
+    //     for(var i = 0; i < ary.length-1-j; i++){
+    //         // ary[i]; ary[i+1];
+    //         // 比较当前项和后一项
+    //         if(ary[i] > ary[i+1]){
+    //             // 如果当前项比后一项大，颠倒一项位置
+    //             var temp = ary[i];
+    //             ary[i] = ary[i+1];
+    //             ary[i+1] = temp;
+    //         }
+    //     }
+    // }
+    // console.log(ary);
+
+// 2、插入排序
+    // var ary = [1, 6, 0, 8, 2, 9, 7, 10, 3, 5, 4];
+    // var newAry = [];
+    // newAry.push(ary[0]);
+    // for (var i = 1; i < ary.length; i++) {
+    //     var cur = ary[i];
+    //     for (let j = newAry.length - 1; j >= 0; j--) {
+    //         if (cur < newAry[j]) {
+    //             if (j === 0) {
+    //                 newAry.unshift(cur)
+    //                 break;
+    //             }
+    //         } else {
+    //             newAry.splice(j + 1, 0, cur)
+    //             break;
+    //         }
+    //     }
+    // }
+    // console.log(newAry)
+
+// 3、快速排序，
+    // 找中间项（parseInt(length/2)中间项的索引），将比中间项小的放到左边，比中间项大的放到右边，再找左边的中间项、右边的中间项，...找n多次，每次找出来的中间项的位置肯定是正确的，直到左边或者右边的个数等于1或者等于0个时就不用再找了；
+
+    var aa = [1, 100, 200, 1000, 33, 333, 1100, -100, 1.1]; // length = 7 / 2 
+
+    // 快速排序的方法
+    function quickSort(ary) {
+        // 如果ary的length为1或者0时不需要再找中间项
+        if (ary.length <= 1) {
+            return ary;
+        }
+        // 找中间项的索引
+        var middleIndex = parseInt(ary.length / 2);
+        var middle = ary.splice(middleIndex, 1); // ary[middleIndex]; // 取中间项的时候需要把中间项从原数组中删除
+        var right = [];
+        var left = [];
+        for (var i = 0; i < ary.length; i++) {
+            if (ary[i] > middle) {
+                // 比中间项大
+                right.push(ary[i]);
+            } else {
+                // 比中间项小或相等
+                left.push(ary[i]);
+            }
+        }
+        // quickSort(left)再找left数组的中间项、right数组的中间项
+        return quickSort(left).concat(middle, quickSort(right));
+    }
+    var a = quickSort(aa);
+    console.log(a);
+    // Maximum call stack size exceeded
+</script>
+
+</html>

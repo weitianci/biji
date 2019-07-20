@@ -1,0 +1,87 @@
+一、start a working area (see also: git help tutorial) 
+     启动一个工作区(参见:git帮助教程)
+     1、clone：Clone a repository into a new directory
+          将线上存储库克隆到本地目录中
+     2、init：Create an empty Git repository or reinitialize an existing one 
+          创建一个空的Git存储库或重新初始化一个现有的存储库
+
+二、work on the current change (see also: git help everyday) 
+     处理当前更改(请参见:git help everyday)
+     1、add：Add file contents to the index 
+          将文件上传到暂存区
+     2、mv：Move or rename a file, a directory, or a symlink
+          查看提交的历史记录
+     3、reset：Reset current HEAD to the specified state
+          取消对文件的修改
+     4、rm：Remove files from the working tree and from the index
+          删除暂存区的内容
+
+三、examine the history and state (see also: git help revisions)
+     检查历史和状态(请参见:git帮助修订)
+     1、bisect：Use binary search to find the commit that introduced a bug
+          使用二分查找查找引入错误的提交
+     2、grep：Print lines matching a pattern
+          打印与模式匹配的行
+     3、log： Show commit logs
+          查看提交记录
+     4、show：Show various types of objects
+          查看各种类型的对象
+     5、status：Show the working tree status
+          查看文件状态
+
+四、grow, mark and tweak your common history
+     成长，标记和调整你们共同的历史
+     1、branch：List, create, or delete branches
+          列出、创建或删除分支
+     2、checkout：Switch branches or restore working tree files
+          切换分支或还原工作树文件
+     3、commit：Record changes to the repository
+          记录对存储库的更改
+     4、diff：Show changes between commits, commit and working tree, etc
+          显示提交、提交和工作树等之间的更改
+     5、merge：Join two or more development histories together
+          将两个或多个开发历史连接在一起
+     6、rebase：Reapply commits on top of another base tip
+          在另一个基本提示之上重新应用提交
+     7、tag：Create, list, delete or verify a tag object signed with GPG
+          创建、列表、删除或验证用GPG签名的标记对象
+
+五、collaborate (see also: git help workflows)
+     协作(参见:git帮助工作流)
+     1、fetch：Download objects and refs from another repository
+          从另一个存储库下载对象和引用
+     2、git pull xxx(网址名) master：Fetch from and integrate with another repository or a local branch
+          拉取远程仓库最新的代码更新并同步本地代码
+     3、git push xxx(网址名) master：Update remote refs along with associated objects
+          从历史区上传到远程仓库
+
+create a new repository on the command line
+在命令行上创建一个新的存储库
+     帐号登录
+     git config --global user.email "邮箱"
+     git config --global user.name "用户名"
+
+     clear : 清屏
+
+     1、git init
+          创建一个空的Git存储库或重新初始化一个现有的存储库
+     2、git add 本地文件名
+          将工作区文件上传到暂存区
+     3、git commit -m "备注"
+          从暂存区上传到历史区
+        git checkout -- 文件名 
+        把暂存区的内容覆盖工作区内容
+        git rm --cached 文件名
+        删除暂存区的内容
+        如果文件是红色： 代表当前文件在工作区；
+        如果是绿色，代表文件在暂存区；
+     4、git remote add xxx https://github.com/weitianci/123.git
+          让本地和远程仓库连接(xxx：网址名 可以是任何名，方便操作网址  需要先在github上创建项目获得网址)
+        git remote -v
+          查看远程仓库的状态
+        git remote remove xxx(网址名) 
+          删除远程仓库
+     5、git push xxx(网址名) master
+          从历史区上传到远程仓库
+        git pull xxx(网址名) master
+          拉取远程仓库最新的代码更新并同步本地代码

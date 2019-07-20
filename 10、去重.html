@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+// 1、利用indexOf去重
+    // 创建一个空数组，将数组得中得每一项添加到新数组中，添加之前用indexOf判断以下新数组中有没有要添加得这一项，有得话不添，没有得话再添加
+    // var ary = [1, 2, 3, 100, 1, 300, 2];
+    // var ary1 = [];
+
+    // for(var i = 0; i < ary.length; i++){
+    //     // 判断这一项（ary[i]）在新数组中是否存在
+    //     if(ary1.indexOf(ary[i]) == -1){
+    //         // 新数组中没有要添加得这一项，再添加
+    //         ary1.push(ary[i])   
+    //     }
+    // }
+    // console.log(ary1);
+
+// 2、利用对象去重
+    // 创建一个空数组，一个空对象，将数组得每一项添加到空数组中，添加到空数组得同时，把每一项当作键值对添加到空对象中；  每次往空数组中添加时，检测对象中有没有这个键值对，如果有键值对，不再往数组中添加，没有得话在添
+    // var ary = [1, 2, 3, 100, 1, 300, 2];
+    // var ary1 = [];
+    // var obj = {};
+    // for(var i = 0; i < ary.length; i++){
+    //     // 检测对象中有没有添加该项得键值对
+    //     if(!(ary[i] in obj)){
+    //         // 没有得话再往空数组中添加这一项，并往对象中添加键值对
+    //         ary1.push(ary[i]);
+    //         // 往对象中添加键值对（键是当前这一项，值也是当前这一项）
+    //         // 对象中添加、修改、获取属性时，如果属性名保存再变量中，只能通过中括号去取
+    //         obj[ary[i]] = ary[i];
+    //     }
+    // }
+    // console.log(ary1);
+
+// 3、利用对象得属性名不重复去重
+    // 创建空对象，取出数组中的每一项，将每一项以键值对的形式添加到对象中，对象中相同的键值对只能存在一个，将对象中每一个键值对的值，取出来拼成新数组；
+    // var ary = [1, 2, 3, 100, 1, 300, 2];
+    // var obj = {};
+    // var ary1 = [];
+
+    // for(var i = 0; i < ary.length; i++){
+    //     // ary[i]
+    //     // 将当前项添加到对象中，属性名为当前向，属性值也为当前项
+    //     obj[ary[i]] = ary[i];
+    // }
+    // for(var key in obj){
+    //     // 对象有几个键值对循环执行几次
+    //     // key中保存的时每一个键（key是字符串）
+    //     // console.log(obj[key]);
+    //     ary1.push(obj[key]);
+    // }
+    // console.log(ary1);
+
+// 4、先排序后去重
+    // 通过sort排序，排序完成后相等的两项肯定是挨着的，遍历数组的每一项，和后一项比较，如果相等，删除后一项；
+    var ary = [1, 2, 3, 100, 1, 300, 2, 1];
+    ary.sort();
+    console.log(ary);
+    // [1, 1, 1, 100, 2, 2, 3, 300]
+    for(var i = 0; i < ary.length-1; i++){
+        // ary[i]当前一项 ary[i+1]后一项
+        if(ary[i] === ary[i+1]){
+            // 如果当前项和后一项相等删除后一项，删除后还得再比较一项当前项和后一项的后一项（让i不变的情况下再次比较当前项和后一项的后一项）
+            ary.splice(i+1, 1);
+            i--;
+        }
+    }
+    console.log(ary);
+</script>
+</html>
