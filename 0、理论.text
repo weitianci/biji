@@ -114,7 +114,7 @@
     1、变量只声明，未赋值，返回undefined
     2、通过对象属性名获取对应的属性值时，获取不到，返回undefined
     3、函数有形参没有对应的实参，形参的值是undefined
-    4、函数中如果没有return或return后面没有值时，返回值为undefined；
+    4、函数中如果没有return或return后面没有值时，返回值为undefined
 
 10、null的4中情况
     1、通过id获取元素时，获取不到内容，返回null
