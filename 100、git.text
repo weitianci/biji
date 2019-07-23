@@ -83,5 +83,12 @@ create a new repository on the command line
           删除远程仓库
      5、git push xxx(网址名) master（Ctrl+Alt+H）
           从历史区上传到远程仓库
-        git pull xxx(网址名) master（Ctrl+Alt+T）
-          拉取远程仓库最新的代码更新并同步本地代码
+        git pull xxx(网址名) master
+          拉取远程仓库最新的代码更新并同步到工作区
+
+vs code 快捷键：
+     Ctrl+Alt+I ：创建git库
+     Ctrl+Alt+M ：从暂存区上传到历史区
+     Ctrl+Alt+R ：本地和远程仓库连接
+     Ctrl+Alt+H ：历史区上传到远程仓库
+     Ctrl+Alt+T ：暂存区代码更新到工作区
