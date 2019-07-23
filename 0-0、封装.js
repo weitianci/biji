@@ -21,7 +21,14 @@
 
 // offset(center).l
 
+// 获取css
 // getCss(oBox,"width")
+
+// 设置css
+// setCss(oBox, "width", "100px")
+
+// 设置一组css
+// setGroupCss(oBox, {width:"100px",height:"100px"})
 
 function Tabs(eLis, eDiv, tab_read, tab_body, on, mouse) {
     for (let i = 0; i < eLis.length; i++) {
@@ -142,4 +149,32 @@ function getCss(curEle,attr){
         val = parseFloat(val)
     }
     return val;
+}
+
+function setCss(curEle, attr, val) {
+    var reg = /^(width|height|left|top|bottom|right|margin|padding|fontSize)$/
+    if (reg.test(attr)) {
+        if (typeof val === "number") {
+            val = val + "px";
+        }
+    }
+    curEle.style[attr] = val;
+}
+
+function setGroupCss(curEle,obj){
+    for (var key in object) {
+        setCss(curEle,key,obj[key])
+    }
+}
+
+function css(...arg) {
+    if (arg.length === 2) {
+        if (typeof arg[1] === "string") {
+            return getCss(...arg)
+        }else{
+            setGroupCss(...arg)
+        }
+    }else if(arg.length===3){
+        setCss(...arg)
+    }
 }

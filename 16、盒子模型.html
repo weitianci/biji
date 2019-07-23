@@ -4,59 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        #outer {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            margin: 20px auto;
-            border: 20px solid pink;
-            background: red;
-        }
-
-        #inner {
-            width: 200px;
-            height: 200px;
-            margin: auto;
-            background: yellow;
-        }
-
-        #center {
-            width: 100px;
-            height: 100px;
-            margin: auto;
-            background: blue;
-        }
-    </style>
 </head>
 
 <body>
-    <div id="outer">
-        <div id="inner">
-            <div id="center"></div>
-        </div>
-    </div>
     <script>
-        var outer = document.getElementById("outer");
-        var inner = document.getElementById("inner");
-        var center = document.getElementById("center");
-        function offset(curEle) {
-            var l = curEle.offsetLeft,
-                t = curEle.offsetTop,
-                parent = curEle.offsetParent;
-            while (parent !== document.body) {
-                l += parent.offsetLeft + parent.clientLeft;
-                t += parent.offsetTop + parent.clientTop;
-                parent = parent.offsetParent;
-            }
-            return { l,t }
-        }
-        console.log(offset(center).l)
+// JS的盒子模型 :
+// 1、client 系列
+    // clientWidth  : width + 左右padding
+    // clientHeight ：height + 上下padding
+    // clientTop    ：上border
+    // clientLeft   : 左border
+
+// 2、offset 系列
+    // offsetParent ：计算偏移量时候的父级参照物，父级参照物默认是body，可通过定位修改
+    // offsetWidth  ：width + 左右padding + 左右border
+    // offsetHeight ：height + 上下padding + 上下border
+    // offsetTop    ：上偏移量 从当前元素的上border到父级参照物上border的距离
+    // offsetLeft   : 左偏移量 从当前元素的左border到父级参照物左border的距离
+
+// 3、scroll 系列
+    // scrollWidth : 左padding + width
+    // scrollHeight: padding + height
+
+    // 上面11个属性都是只读属性不能修改，下面2个属性可以修改
+
+    // scrollTop   ：纵向滚动条向下滑动的长度
+    // scrollLeft  ：横向滚动条向右滑动的长度
     </script>
 </body>
 
