@@ -63,11 +63,11 @@ create a new repository on the command line
 
      clear : 清屏
 
-     1、git init（g+i）
+     1、git init（Ctrl+Alt+i）
           创建一个空的Git存储库或重新初始化一个现有的存储库
      2、git add 本地文件名
           将工作区文件上传到暂存区
-     3、git commit -m "备注"（g+m）
+     3、git commit -m "备注"（Ctrl+Alt+m）
           从暂存区上传到历史区
         git checkout -- 文件名 
         把暂存区的内容覆盖工作区内容
@@ -75,13 +75,13 @@ create a new repository on the command line
         删除暂存区的内容
         如果文件是红色： 代表当前文件在工作区；
         如果是绿色，代表文件在暂存区；
-     4、git remote add xxx https://github.com/weitianci/123.git（g+a）
+     4、git remote add xxx https://github.com/weitianci/123.git（Ctrl+Alt+a）
           让本地和远程仓库连接(xxx：网址名 可以是任何名，方便操作网址  需要先在github上创建项目获得网址)
         git remote -v
           查看远程仓库的状态
         git remote remove xxx(网址名) 
           删除远程仓库
-     5、git push xxx(网址名) master（g+h）
+     5、git push xxx(网址名) master（Ctrl+Alt+h）
           从历史区上传到远程仓库
-        git pull xxx(网址名) master（g+p）
+        git pull xxx(网址名) master（Ctrl+Alt+p）
           拉取远程仓库最新的代码更新并同步本地代码
