@@ -19,6 +19,10 @@
 //类数组转数组：
 //执行toArray(元素)
 
+// offset(center).l
+
+// getCss(oBox,"width")
+
 function Tabs(eLis, eDiv, tab_read, tab_body, on, mouse) {
     for (let i = 0; i < eLis.length; i++) {
         eLis[i][on] = function () {
@@ -112,4 +116,30 @@ function toArray(likeAry) {
         }
     }
     return ary;
+}
+
+function offset(curEle) {
+    var l = curEle.offsetLeft,
+        t = curEle.offsetTop,
+        parent = curEle.offsetParent;
+    while (parent !== document.body) {
+        l += parent.offsetLeft + parent.clientLeft;
+        t += parent.offsetTop + parent.clientTop;
+        parent = parent.offsetParent;
+    }
+    return { l,t }
+}
+
+function getCss(curEle,attr){
+    var val;
+    if ("getComputedStyle" in window) {
+        val = getComputedStyle(curEle)[attr]
+    }else{
+        val = curEle.currentStyle[attr]
+    }
+    var reg = /^(width|height|left|top|bottom|right|margin|padding|fontSize)$/
+    if (reg.text(attr)) {
+        val = parseFloat(val)
+    }
+    return val;
 }

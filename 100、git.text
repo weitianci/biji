@@ -70,11 +70,11 @@ create a new repository on the command line
      3、git commit -m "备注"（Ctrl+Alt+M）
           从暂存区上传到历史区
         git checkout -- 文件名 
-        把暂存区的内容覆盖工作区内容
+          把暂存区的内容覆盖工作区内容
         git rm --cached 文件名
-        删除暂存区的内容
-        如果文件是红色： 代表当前文件在工作区；
-        如果是绿色，代表文件在暂存区；
+          删除暂存区的内容
+          如果文件是红色： 代表当前文件在工作区；
+          如果是绿色，代表文件在暂存区；
      4、git remote add xxx https://github.com/weitianci/123.git（Ctrl+Alt+R）
           让本地和远程仓库连接(xxx：网址名 可以是任何名，方便操作网址  需要先在github上创建项目获得网址)
         git remote -v
