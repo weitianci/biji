@@ -91,4 +91,6 @@ vs code 快捷键：
      Ctrl+Alt+M ：从暂存区上传到历史区
      Ctrl+Alt+R ：本地和远程仓库连接
      Ctrl+Alt+H ：历史区上传到远程仓库
+
+     Ctrl+Alt+C ：远程仓库克隆到本地
      Ctrl+Alt+T ：暂存区代码更新到工作区
