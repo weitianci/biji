@@ -75,5 +75,19 @@
         }
     }
     console.log(ary);
+
+// 5、数组对象去重
+    var ary = [{ a: 1, b: 2 }, { a: 1, b: 3 }, { a: 2, b: 3 }, { a: 1, b: 2 }, { b: 1, a: 2 }];
+    var newObj = {};
+    for (let i = 0; i < ary.length; i++) {
+        var obj = ary[i];
+        if (newObj[obj.a + "," + obj.b]) {
+            ary.splice(i, 1);
+            i--;
+            continue
+        }
+        newObj[obj.a + "," + obj.b] = true;
+    }
+    console.log(ary)
 </script>
 </html>
