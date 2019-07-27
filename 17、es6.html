@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+// 1、let
+    // 1、let 不进行变量提升；在代码运行之前，对let的变量进行了声明
+    // 2、let 声明的变量在同一个作用域下不可以重名
+    // 3、let 声明的变量在全局作用域下不会给window新增键值对
+    // 4、let 声明的变量只在当前的块级作用域内有效
+
+// 2、const
+    // 1、不进行变量提升
+    // 2、不能重复声明
+    // 3、不能被修改
+
+// 3、块级作用域
+    // 1、块级作用域让用let定义的变量成为当前作用域私有的
+    // 2、在块级作用域中function定义的函数，块级作用域外面只声明，不定义；当进入到块级作用域中，先对函数进行定义
+
+// 4、解构赋值
+    // 1、从数组或者对象中按照特定的规则进行赋值的操作
+    // 2、如果解构不成功，会得到一个默认值undefined
+    // 3、保证解构时，左右结构是一样的
+    // 4、数组解构左边可以对变量赋默认值,如果后面有值，会把默认值覆盖，只有后面的值只是undefined时，不会覆盖
+    // 5、对象解构按照属性名进行匹配
+
+    // let a = 1;
+    // let b = 2;
+    // let c = 3;
+    // let [a,b,c,d]=[1,2,3]
+    // console.log(a)//1
+    // console.log(b)//2
+    // console.log(c)//3
+    // console.log(d)//undefined
+
+    // let [a,[b],c]=[1,2,3]
+    // console.log(b)//报错
+
+    // let [a,b=1]=[2,3]
+
+    // let {foo,bar} = {bar:"age",foo:"name"}
+    // console.log(foo)//name 
+// 5、字符串
+    // 1、模板字符串
+    // 让字符串拼接更直观
+    // let str = `<div><img src = "${cur}"><div>`
+    
+    // 2、repeat
+    // 重复n次字符串
+
+// 6、对象
+    // assign
+    // 对象合并，如果属性名相同，则后面的将前面的进行覆盖
+    // 浅克隆：目标对象中的属性值是引用原对象中的空间地址，当改变其中一个时，另一个也会随之改变
+    // var obj1 = {name:"name"},
+    //     obj2 = {age:10};
+    // var obj = {age:5};
+    // Object.assign(obj,obj1,obj2);
+    // console.log(obj);
+
+// 7、箭头函数
+    // 1、如果形参参数只有一个，可以省略参数位置的小括号；当有多个或没有的话必须加上
+    // 2、如果函数体中只有一条语句，那么可以省略大括号
+    // 3、函数中如果只有return+值，那么可以省略大括号和return
+    // 4、如果箭头函数返回一个对象，并且省略了return，那么需要在对象的外面包一个小括号
+
+    // let fn = () => {};//function fn(){}
+    // let fn = a => b;//function fn(a){return b}
+    // let fn = () => ({name:1})//function fn(){return {name:1}}
+
+    // let fn = a => b => c => a+b+c
+    // function fn(a){
+    //     return function(b){
+    //         return function(c){
+    //             return a+b+c
+    //         }
+    //     }
+    // }
+    // console.log(fn(1)(2)(3))
+
+    // setTimeout(() => {}, 1000);
+    // ary.sort((a,b)=>a-b)
+
+// 8、箭头函数执行
+    // 1、箭头函数不存在arguments,用扩展运算符...代替arguments，接受所有实参
+    // 2、箭头函数不能作为构造函数，不能被new
+    // 3、箭头函数的this指向上一级作用域中的this
+    // 4、不能使用yield命令，不能作为Generator函数
+
+    // let fn = (...ary) => console.log(ary)
+    // fn(1,2,5,7,3)
+
+    // let obj = {
+    //     fn: function () {
+    //         let f =()=>{
+    //             console.log(this);// obj
+    //         }
+    //         f();
+    //     }
+    // }
+    // obj.fn();
+
+// 9、Generator函数
+    // 1、function 后面加*号
+    // 2、函数体中可以用yield表达式，代表暂停状态，调用next方法时继续执行
+
+    // function* fn(){
+    //     console.log(10)
+    //     yield "100";
+    //     yield "hello";
+    //     return "world"
+    // }
+    // var h = fn();//返回一个重新包装的对象,这个对象上有一个next方法,当调用next方法时，可以让函数从函数头部或者是上一次停下来的位置开始执行，直到遇到yield或者遇到return，才会停下来，Generator函数是分段执行的；
+    // var H = h.next();
+    // console.log(H)//{value: "100", done: false}
+    // var H1 = h.next();
+    // console.log(H1)//{value: "hello", done: false}
+    // var H2 = h.next();
+    // console.log(H2)//{value: "world", done: true}
+
+// 10、class
+    // 关键字,用来定义一个类
+    class fn{
+        constructor(name){
+            this.name = name
+            //跟this相关的都是私有属性
+        }
+        getX(){
+            //公有属性，这些属性都放在了原型上，不可遍历
+            //this指向实例
+        }
+        getY=()=>{
+            //私有属性
+            //this指向实例
+        }
+    }
+    var f = new fn("world");
+    // console.log(f);
+
+    // class继承
+    // 继承了类的私有属性和公有属性
+    class A extends fn{
+        // A 继承了 fn
+        constructor(){
+            super();//在子类constructor中必须加上super();
+        }
+    }
+    var a = new A;
+    console.log(a)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
