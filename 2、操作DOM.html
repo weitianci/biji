@@ -12,6 +12,14 @@
     </div>
 </body>
 <script>
+// DOM的回流和重绘：
+
+    // DOM的回流：当页面中元素的位置，大小或结构、定位发生改变
+    // 会引发浏览器对当前页面的结构进行重新的计算；非常耗性能的
+
+    // DOM的重绘： 当元素的背景、透明度、颜色发生变化
+    // 那么浏览器会对元素进行重新描绘；这个过程就是浏览器的重绘
+
     var eBody = document.body
     var eDiv = document.getElementById("div")
     var eP = document.querySelector("#div>p")
@@ -58,5 +66,9 @@
     // eDiv.classList.remove("a")        //删除class的值
     // eDiv.classList.replace("a", "c"); //替换class的值
     //eDiv.classList.replace(旧的class, 新的class);
+
+    // 11、getComputedStyle：获取css计算样式
+
+    // 12、currentStyle：DOM的回流和重绘
 </script>
 </html>
