@@ -1,0 +1,20 @@
+语法说明：
+    在body中，使用转义字符\来书写制表符Tab、双引号"等内容；
+    使用${num: default name}来定义输入位置，按下Tab键来递进光标到下一个；
+    num的值为0,1,2,3...。0为光标的最终位置，1,2,3...决定了光标的顺序位置；
+    default name是默认值，可按下Tab不编辑直接跳过。
+
+prefix: 快捷键
+scope：自定义引用css,html,javascript格式的代码片段
+body：内容，""和\需要用\转义否则会报错
+description：输入快捷键时的代码提示
+{
+	"Ajax": {
+		"prefix": "xhr",
+		"scope": "javascript,typescript",
+		"body": [
+			"",
+		],
+		"description": "Ajax"
+	}
+}
