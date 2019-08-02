@@ -87,10 +87,16 @@ create a new repository on the command line
           拉取远程仓库最新的代码更新并同步到工作区
 
 vs code 快捷键：
+基本流程：
      Ctrl+Alt+I ：创建git库
-     Ctrl+Alt+M ：从暂存区上传到历史区
-     Ctrl+Alt+R ：本地和远程仓库连接
+     Ctrl+Alt+M ：暂存区上传到历史区
+     Ctrl+Alt+R ：工作区和远程仓库连接
      Ctrl+Alt+H ：历史区上传到远程仓库
 
-     Ctrl+Alt+C ：远程仓库克隆到本地
+暂存区：
+     Ctrl+Alt+M ：暂存区上传到历史区
      Ctrl+Alt+T ：暂存区代码更新到工作区
+
+远程仓库：
+     Ctrl+Alt+C ：远程仓库克隆到工作区
+     Ctrl+Alt+H ：远程仓库代码更新工作区代码
