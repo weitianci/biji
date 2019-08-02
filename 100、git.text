@@ -89,12 +89,14 @@ create a new repository on the command line
 vs code 快捷键：
 基本流程：
      Ctrl+Alt+I ：创建git库
-     Ctrl+Alt+M ：暂存区上传到历史区
+     Ctrl+Alt+M ：工作区上传到历史区
      Ctrl+Alt+R ：工作区和远程仓库连接
      Ctrl+Alt+H ：历史区上传到远程仓库
 
+工作区：
+     Ctrl+Alt+M ：工作区上传到历史区
+
 暂存区：
-     Ctrl+Alt+M ：暂存区上传到历史区
      Ctrl+Alt+T ：暂存区代码更新到工作区
 
 远程仓库：
