@@ -12,12 +12,22 @@
 
 </body>
 <script>
+// 0、toString
+    // 作用：将数组改成字符串
+    // 参数：没有参数
+    // 返回值：修改后的字符串
+    // 修改原数组
+
+    // var ary = ["a", "b"];
+    // var a = ary.toString();
+    // console.log(a)
 
 // 1、shift(数组塌陷)
     // 作用：删除数组的第一项
     // 参数：没有参数
     // 返回值：被删除的那一项
     // 修改原数组
+
     // var ary = ["a", "b"];
     // var a = ary.shift();
     // console.log(ary);
@@ -28,6 +38,7 @@
     // 参数：可以是一个也可以是多个
     // 返回值：新数组的长度
     // 修改原数组
+
     // var ary = ["a", "b"];
     // var a = ary.unshift("1", "2");
     // console.log(ary);
@@ -38,6 +49,7 @@
     // 参数：没有参数
     // 返回值：被删除的那一项
     // 修改原数组
+
     // var ary = ["a", "b"];
     // var a = ary.pop();
     // console.log(ary);
@@ -77,6 +89,7 @@
         // 参数可以是负数，负数情况下，先将负数加上数组的length，再截取
     // 返回值：截取数组中的一部分，
     // 不修改原数组
+
     // var ary = [1,2,3,4,5,6];
     // var newAry = ary.slice(-3, -1); // (4, 5)
     // console.log(newAry);
@@ -87,6 +100,7 @@
     // 参数：被查询的项
     // 返回值：第一次匹配的索引，不存在返回-1；
     // 不修改原数组
+
     // var ary = ["abc", "def", "xyz", "def"];
     // var n = ary.indexOf("def")
     // console.log(n);
@@ -97,11 +111,34 @@
     // 参数：被查询的项
     // 返回值：最后一次匹配的索引，如果匹配不到返回-1；
     // 不修改原数组
+
     // var ary = ["abc", "def", "xyz", "def"];
     // var n = ary.lastIndexOf("def");
     // console.log(n);
 
-// 9、sort
+// 9、find
+    // 作用：查找，从左到右依次查找，符合条件直接返回，不再继续查找
+    // 参数：原数组
+    // 返回值：符合条件的值
+    // 原数组不变
+
+    // let ary = [12,5,6,78,111]
+    // let a = ary.find((item,index)=>{
+    //     return item>60;
+    // })
+    // console.log(a)
+
+// 10、filter
+    // 作用：截取区间的数组
+    // 参数：原数组
+    // 返回值：截取的新数组
+    // 原数组不变
+
+    // var ary = [1, 5, 6, 7, 3];
+    // var a = ary.filter(function(item){return item <= 5})
+    // console.log(a);
+
+// 11、sort
     // 作用：给数组排序
     // 参数：
         // 没有参数ary.sort(); 只能排序相同位数的数字，从小到大排序
@@ -121,7 +158,7 @@
     // });
     // console.log(ary);
 
-// 10、reverse
+// 12、reverse
     // 作用：倒序，将数组顺序倒置
     // 参数：不要参数
     // 返回值：倒序完的数组
@@ -131,7 +168,7 @@
     // console.log(ary);
     // console.log(a);
 
-// 11、join
+// 13、join
     // 作用：将数组按照指定的字符拼接成字符串
     // 参数：
     // 没有参数：按照","拼接
@@ -142,9 +179,8 @@
     // var ary = ["2019", "06", "10"];
     // var str = ary.join()
     // console.log(str);
-    // console.log(ary);
 
-// 12、concat
+// 14、concat
     // 作用：拼接数组，可以拼接两个，也可以拼接多个
     // 参数：可以是一个或多个数组，不是数组会转成数组（在外面加[]）再拼接
     // 返回值：拼接完成的数组
@@ -162,11 +198,12 @@
     // console.log(ary1 == ary);
     // ary.length--
 
-// 13、map（映射）
+// 15、map（映射）
     // 作用：根据原来数组得每一项，映射出一个新的数组
     // 参数： 回调函数，数组length是几，回调函数就执行几次
     // 返回值：映射得到新数组
     // 原数组不变
+
     // var ary = ["a","b","c","d","e"];
     // var a = ary.map(function(v, i, arr){
     //     // 数组length是几，回调函数就执行几次
@@ -183,11 +220,12 @@
     // console.log(ary);
 
 
-// 14、forEach
+// 16、forEach
     // 作用：遍历数组
     // 参数： 回调函数
     // 返回值：没有返回值(return)
     // 原数组不变
+
     // var ary = [1,2,3,4,5];
     // var a = ary.forEach(function(v,i,arr){
     //     // 数组有几项回调函数执行几次
@@ -201,38 +239,30 @@
     // });
     // console.log(ary);
 
-// 15、Set（ES6）
+// 17、Set（ES6）
     // 作用：数组去重
     // 参数：原数组
     // 返回值：去重后的新数组
     // 原数组不变
+
     // var ary = [1,2,2,3,3,3,4,4,4,4,5,5,6,6,6,7,7,7];
     // var newAry = new Set(ary);
     // console.log(newAry)
 
-// 16、toString，// 将中括号去掉换成引号
-    // 将数组转字符串 String()
-
-// 17、reduce() // 从左到右
-//     reduceRight() // 从右到左
+// 19、
+    // reduce // 从左到右
+    // reduceRight() // 从右到左
     // 作用：数组求和 找出最大值,最小值
     // 参数：原数组
     // 返回值：和 最大值,最小值
     // 原数组不变
-// var arr = [1,2,2,3,4,54];
-// 求和
-// console.log(arr.reduce(function(a, b){return a + b})) // 66 
-// 找出最大值
-// console.log(arr.reduce(function(a, b){return a < b ? a : b})) // 54
 
-// 18、filter() 
-    // 作用：截取区间的数
-    // 参数：原数组
-    // 返回值：截取区间的值
-    // 原数组不变
-// var arr = [1, 5, 6, 7, 3];
-// console.log(arr.filter(function(item){return item <= 5})); // [1, 5, 3]
-// console.log(arr)
+    // var arr = [1,2,2,3,4,54];
+    // 求和
+    // console.log(arr.reduce(function(a, b){return a + b})) // 66
+
+    // 找出最大值
+    // console.log(arr.reduce(function(a, b){return a < b ? a : b})) // 54
 </script>
 
 </html>
