@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">231</div>
+</body>
+<script>
+// 事件方法：
+    // 1.顺序问题
+    // 2.this问题
+    // 3.重复绑定问题
+
+    function myFunction() {
+        alert("Hello World!");
+    }
+
+    // 1、捕获阶段(父元素先执行，然后一级一级的向下执行)
+    // 2、目标阶段(给元素的事件行为先绑定的什么方法，那么就先执行什么方法)
+    // 3、冒泡阶段(子元素先执行，然后一级一级向上执行)
+
+    // true：代表的是在捕获阶段执行这个函数
+    // false：代表的是在冒泡阶段执行这个函数
+
+    // 1、addEventListener方法允许向同一个元素添加多个事件，且不会覆盖已存在的事件
+        // box.addEventListener("click", myFunction, false);
+    // 2、removeEventListener方法允许向同一个元素添加多个事件，且不会覆盖已存在的事件
+        // box.removeEventListener("click", myFunction, false);
+
+// 事件对象：
+    box.onclick = function (e) {
+        // 1、clientX	返回当事件被触发时，鼠标指针的水平坐标
+        // 2、clientY	返回当事件被触发时，鼠标指针的垂直坐标
+        // 3、pageX pageY: 点击的位置距离body的左上边框的距离
+        // 4、offsetX offsetY : 点击的位置距离盒子的左上边框的距离
+        // 5、target : 事件源
+        // 6、type : 事件的类型
+        // 7、cancelBubble : 阻止事件冒泡到父元素，阻止任何父事件处理程序被执行
+        // 8、returnValue ： 阻止事件的默认行为
+        // 9、stopPropagation：阻止事件冒泡到父元素，阻止任何父事件处理程序被执行。(IE8及以下不兼容)
+        // 10、preventDefault：阻止元素发生默认的行为
+
+        // e.cancelBubble = true;
+        // e.stopPropagation();
+        // e.preventDefault();
+    }
+</script>
+
+</html>
