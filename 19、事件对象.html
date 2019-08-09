@@ -37,14 +37,14 @@
     box.onclick = function (e) {
         // 1、clientX	返回当事件被触发时，鼠标指针的水平坐标
         // 2、clientY	返回当事件被触发时，鼠标指针的垂直坐标
-        // 3、pageX pageY: 点击的位置距离body的左上边框的距离
+        // 3、pageX pageY: 点击的位置距离body的左上边框的距离(IE8及以下不兼容)
         // 4、offsetX offsetY : 点击的位置距离盒子的左上边框的距离
-        // 5、target : 事件源
+        // 5、target : 事件源(IE8及以下不兼容)
         // 6、type : 事件的类型
         // 7、cancelBubble : 阻止事件冒泡到父元素，阻止任何父事件处理程序被执行
         // 8、returnValue ： 阻止事件的默认行为
         // 9、stopPropagation：阻止事件冒泡到父元素，阻止任何父事件处理程序被执行。(IE8及以下不兼容)
-        // 10、preventDefault：阻止元素发生默认的行为
+        // 10、preventDefault：阻止元素发生默认的行为(IE8及以下不兼容)
 
         // e.cancelBubble = true;
         // e.stopPropagation();
