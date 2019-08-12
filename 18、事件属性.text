@@ -13,12 +13,16 @@
     onkeyCode    键盘码 回车：13
     onkeyup      键盘抬起
     onkeydown    键盘按下
-    onkeypress   按键按下抬起
+    onkeypress   键盘按下抬起
 
 input事件：
     oninput 
     onblur       失去焦点
-    onofocus     得到光标
+    onofocus     获取焦点
+
+input属性：
+    autofocus    自动获取鼠标焦点
+    placehoder   文本框默认值
 
 HTML事件:
     onload       文档加载完成
