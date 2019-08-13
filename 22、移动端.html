@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http - equiv="X-UA-Compatible" content="ie=edge">
+    <title> 移动端 </title>
+    <style>
+        .box{
+            width: 1.75rem;
+            height: 1.75rem;
+            background: lightblue;
+        }
+    </style>
+    <script>
+        ~ function anonymous() {
+            let computedREM = function computedREM() {
+                let winW = document.documentElement.clientWidth,
+                    desW = 640;
+                if (winW                                                                                                      >= 640) {
+                    document.documentElement.style.fontSize = '100px';
+                    return;
+                }
+                document.documentElement.style.fontSize = winW / desW * 100 + 'px';
+            };
+            computedREM();
+            window.addEventListener('resize', computedREM);
+        }(window);
+    </script>
+</head>
+
+<body>
+    <div id="box" class="box">asd</div>
+</body>
+<script src="../笔记/fastclick.js"></script>
+<script>
+    window.addEventListener("load",function () {
+        FastClick.attach(document.body);
+    })
+    let box = document.getElementById("box");
+    box.ontouchmove = function (e) {
+        console.log(e.touches[0].clientX)
+    }
+
+// 移动端触摸屏事件属性
+    // 1、ontouchstart     手指按下触发事件
+    // 2、ontouchmove      手指按下移动触发事件
+    // 3、ontouchend       手指抬起触发事件
+    // 4、onclick          会根据鼠标移动判断是否触发touchmove事件，如果触发，就不会触发onclick事件，触发时间超过300ms也不触发onclick事件
+    // 5、ontouchcancel    当有一些更高级别的事件发生，会取消当前touch操作，并触发ontouchcancel
+
+// 移动端触摸屏事件对象
+    // 在移动端中，
+</script>
+</html>
