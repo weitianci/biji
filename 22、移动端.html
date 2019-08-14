@@ -7,7 +7,7 @@
     <meta http - equiv="X-UA-Compatible" content="ie=edge">
     <title> 移动端 </title>
     <style>
-        .box{
+        .box {
             width: 1.75rem;
             height: 1.75rem;
             background: lightblue;
@@ -18,7 +18,7 @@
             let computedREM = function computedREM() {
                 let winW = document.documentElement.clientWidth,
                     desW = 640;
-                if (winW                                                                                                      >= 640) {
+                if (winW >= 640) {
                     document.documentElement.style.fontSize = '100px';
                     return;
                 }
@@ -35,7 +35,7 @@
 </body>
 <script src="../笔记/fastclick.js"></script>
 <script>
-    window.addEventListener("load",function () {
+    window.addEventListener("load", function () {
         FastClick.attach(document.body);
     })
     let box = document.getElementById("box");
@@ -53,4 +53,5 @@
 // 移动端触摸屏事件对象
     // 在移动端中，
 </script>
+
 </html>

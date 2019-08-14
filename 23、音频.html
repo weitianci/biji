@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <audio src="../qq音乐/img/myDream.m4a" id="music" controls></audio>
+    <button id="start">开始</button>
+    <button id="stop">暂停</button>
+</body>
+<script>
+    // 音视频
+    // 属性
+    // 1、controls: 显示
+    // 2、autoplay：自动播放
+
+    // 方法
+    // 1、play：播放
+    // 2、pause：暂停
+    // 3、paused：当前音乐是播放状态返回false，暂停状态返回true
+    // 4、duration：音乐的总时间
+    // 5、currentTime：当前音乐的播放时间
+    // 6、canplay：当音乐资源加载完毕，会立即触发这个事件
+    let music = document.getElementById("music"),
+        start = document.getElementById("start"),
+        stop = document.getElementById("stop");
+    start.onclick = function () {
+        music.play();
+    }
+    stop.onclick = function () {
+        music.pause();
+    }
+</script>
+
+</html>
