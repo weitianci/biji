@@ -1,0 +1,4 @@
+npm命令：
+npm init    创建npm
+npm install jquery --save   添加jquery
+npm install bootstrap@3.3.7 --save  添加bootstrap 3.3.7版本
