@@ -12,7 +12,7 @@
 
 </body>
 <script>
-    // ajax四步：
+// ajax四步：
     let data;
     // 1、创建一个ajax实例
     let xhr = new XMLHttpRequest();//  XMLHttpRequest是一个内置的类
@@ -34,12 +34,36 @@
     console.log(2)
     // false：3、1、2   true：3、2、1
 
+// 传参
+    // 1、get在open？后传参
+    // xhr.open("get", "data.json?username=aaa&password=112233", true);
+
+    // 2、post在send发送请求时传参
+    // xhr.send({username="aaa",password:"112233"});
+
+// jquery ajax：
+    $.ajax({
+        type: "get",
+        url: "url",
+        async: true,
+        data: "data",
+        dataType: "json",
+        success: function (data) {
+            
+        }
+    });
+
 // xhr.readyState：这个属性值012345；每个值代表当前ajax请求进行到了不同的阶段
     // 0：创建了ajax的实例
     // 1：确定请求的方式，路径，同步异步
     // 2：说明服务器已经接受到客户端发来的请求，并且在数据传输之前，把响应头传送给客户端
     // 3：说明服务端正在向客户端传送数据信息
     // 4：说明客户端已经完全接受到了服务器传递过来的数据
+
+// 同异步请求
+    // js是单线程，同一时间只能执行一个任务
+    // 浏览器是多线程，可以同时执行多个任务
+    // 先执行ajax send()前面onreadystatechange内部代码的为同步，跳过ajax先执行send()后面代码的为异步
 
 // 常见HTTP状态码
     // 2 开头
