@@ -3,7 +3,7 @@
 	${1:字符}：生成代码后光标的位置，字符表示生成代码后光标默认选中的字符
 
 prefix: 快捷键
-scope：自定义引用css,html,javascript格式的代码片段
+scope：自定义引用css,less,html,javascript格式的代码片段
 body：内容，""和\需要用\转义否则会报错
 description：输入快捷键时的代码提示
 {
