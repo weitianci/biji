@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-
-<body>
-
-</body>
-<script>
 // ajax四步：
     let data;
     // 1、创建一个ajax实例
@@ -53,7 +39,7 @@
         }
     });
 
-// xhr.readyState：这个属性值012345；每个值代表当前ajax请求进行到了不同的阶段
+// xhr.readyState：这个属性值01234；每个值代表当前ajax请求进行到了不同的阶段
     // 0：创建了ajax的实例
     // 1：确定请求的方式，路径，同步异步
     // 2：说明服务器已经接受到客户端发来的请求，并且在数据传输之前，把响应头传送给客户端
@@ -84,6 +70,10 @@
     // 5 开头
     // 500 : 服务器未知的错误；
     // 503 : 超负荷；过载；
-</script>
 
-</html>
+// URL
+    // http https：协议
+    // www.baidu.com：域名
+    // 端口号
+    // 资源路径
+    // ？后面跟的参数

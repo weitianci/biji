@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let http = "https://www.easy-mock.com/mock/5d5b5db2d9b03b7a793de93e/example/https:/github.com/weitianci";
+    let xhr = new XMLHttpRequest();
+    xhr.open("post", http+"/EasyMock.git", false);
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && /^2\d{2}/.test(xhr.status)) {
+            console.log(JSON.parse(xhr.responseText))
+        }
+    }
+    xhr.send();
+</script>
+
+</html>
