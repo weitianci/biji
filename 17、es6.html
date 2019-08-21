@@ -128,7 +128,37 @@
     // var H2 = h.next();
     // console.log(H2)//{value: "world", done: true}
 
-// 10、class
+// 10、async函数
+    // 同步代码为主队列先执行，异步代码为等待任务队列后执行
+    // 异步代码：setTimeout setInterval、ajax、事件、promise的then、async、await
+    // async函数中如果没有await，那么和普通函数一样
+    // 一旦加了await，那么await下面的代码就是异步的，在定时器前执行
+    // 定时器是异步代码最后执行，从上到下时间短的先执行
+    
+    // function fn() {
+    //     console.log(1);
+    // }
+    // setTimeout(() => {
+    //     console.log(5)
+    // }, 0);
+    // async function fn2() {
+    //     console.log(2);
+    //     await fn();
+    //     console.log(3);
+    // }
+    // new Promise(function (resolve,reject) {
+    //     console.log(6);
+    //     // setTimeout(() => {
+    //         resolve();
+    //     // }, 0);
+    //     console.log(9)
+    // }).then(function () {
+    //     console.log(8)
+    // })
+    // fn2();
+    // console.log(4)
+
+// 11、class
     // 关键字,用来定义一个类
     class fn{
         constructor(name){
