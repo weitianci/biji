@@ -13,6 +13,6 @@ description：输入快捷键时的代码提示
 		"body": [
 			"",
 		],
-		"description": "Ajax"
+		"description": "Ajax提示"
 	}
 }
