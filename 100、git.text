@@ -104,7 +104,9 @@ create a new repository on the command line
      4、git merge xxx(分支名)
         合并分支(把分支合并到主干上)
      5、git push xxx(网址名) xxx(分支名)
-        本地分支上传到远程仓库对应的分支
+        本地分支上传到远程分支
+     6、git push xxx(分支名) --delete
+        删除远程分支
 
 vs code 快捷键：
 基本流程：
