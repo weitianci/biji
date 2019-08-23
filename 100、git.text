@@ -66,15 +66,17 @@ create a new repository on the command line
      1、git init（Ctrl+Alt+I）
           创建一个空的Git存储库或重新初始化一个现有的存储库
      2、git add 本地文件名
-          将工作区文件上传到暂存区
+          从工作区上传到暂存区
      3、git commit -m "备注"（Ctrl+Alt+M）
           从暂存区上传到历史区
         git checkout -- 文件名 
           把暂存区的内容覆盖工作区内容
         git rm --cached 文件名
           删除暂存区的内容
-          如果文件是红色： 代表当前文件在工作区；
-          如果是绿色，代表文件在暂存区；
+        git status 
+          查看文件状态：如果文件是红色，代表当前文件在工作区；如果是绿色，代表文件在暂存区；
+        git log
+          查看提交日志
      4、git remote add xxx https://github.com/weitianci/123.git（Ctrl+Alt+R）
           让本地和远程仓库连接(xxx：网址名 可以是任何名，方便操作网址  需要先在github上创建项目获得网址)
         git remote -v
@@ -85,11 +87,13 @@ create a new repository on the command line
           从历史区上传到远程仓库
         git pull xxx(网址名) master
           拉取远程仓库最新的代码更新并同步到工作区
+        git clone
+          远程仓库克隆到工作区
 
 vs code 快捷键：
 基本流程：
      Ctrl+Alt+I ：创建git库
-     Ctrl+Alt+M ：工作区上传到历史区
+     Ctrl+Alt+M ：工作区上传到历史区（vs code可跳过缓存区，直接从工作区上传到历史区，第一次需要设置）
      Ctrl+Alt+R ：历史区和远程仓库连接
      Ctrl+Alt+H ：历史区上传到远程仓库
 
@@ -97,8 +101,8 @@ vs code 快捷键：
      Ctrl+Alt+M ：工作区上传到历史区
 
 暂存区：
-     Ctrl+Alt+T ：暂存区代码更新到工作区
+     Ctrl+Alt+T ：暂存区更新到工作区
 
 远程仓库：
      Ctrl+Alt+C ：远程仓库克隆到工作区
-     Ctrl+Alt+P ：远程仓库代码更新工作区代码
+     Ctrl+Alt+P ：远程仓库更新到工作区
