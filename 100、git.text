@@ -20,7 +20,7 @@
      检查历史和状态(请参见:git帮助修订)
      1、bisect：Use binary search to find the commit that introduced a bug
           使用二分查找查找引入错误的提交
-     2、grep：Print lines matching a pattern
+     2、grep：Drint lines matching a pattern
           打印与模式匹配的行
      3、log： Show commit logs
           查看提交记录
@@ -83,12 +83,25 @@ create a new repository on the command line
           查看远程仓库的状态
         git remote remove xxx(网址名) 
           删除远程仓库
-     5、git push xxx(网址名) master（Ctrl+Alt+H）
+     5、git push xxx(网址名) master(分支名)（Ctrl+Alt+H）
           从历史区上传到远程仓库
-        git pull xxx(网址名) master
+        git pull xxx(网址名) master(分支名)
           拉取远程仓库最新的代码更新并同步到工作区
+        git pull xxx(网址名) master(分支名) --allowed-unrelated-histories
+          强制拉取远程仓库的代码合并到工作区，不会覆盖工作区代码
         git clone
           远程仓库克隆到工作区
+
+主干：一般都是线上的代码,基本没有bug
+分支：
+     1、git branch
+        查看本地分支(*为选中的分支)
+     2、git branch xxx(分支名)
+        创建分支
+     3、git checkout xxx(分支名)
+        切换分支
+     4、git merge xxx(分支名)
+        合并分支(把分支合并到主干上)
 
 vs code 快捷键：
 基本流程：
@@ -99,15 +112,22 @@ vs code 快捷键：
 
 工作区：
      Ctrl+Alt+Z ：工作区上传到暂存区
-     Ctrl+Alt+G ：放弃工作区所有更改的代码，还原到上次暂存区的状态
+     Ctrl+Alt+X ：放弃工作区所有更改的代码，还原到上次暂存区的状态
 
 暂存区：
      Ctrl+Alt+M ：暂存区上传到历史区
-     Ctrl+Alt+T ：暂存区更新到工作区
 
 历史区：
      Ctrl+Alt+H ：历史区上传到远程仓库
+     Ctrl+Alt+T ：历史区更新到工作区
 
 远程仓库：
      Ctrl+Alt+C ：远程仓库克隆到工作区
      Ctrl+Alt+P ：远程仓库更新到工作区
+
+分支：
+     Ctrl+Alt+S ：创建并选中分支
+     Ctrl+Alt+F ：重命名已选中的分支
+     Ctrl+Alt+D ：删除分支
+     Ctrl+Alt+G ：合并分支(把分支合并到主干上)
+     Ctrl+Alt+H ：发部分支
