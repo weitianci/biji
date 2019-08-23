@@ -98,12 +98,15 @@ vs code 快捷键：
      Ctrl+Alt+H ：历史区上传到远程仓库
 
 工作区：
-     Ctrl+Alt+M ：工作区上传到历史区
+     Ctrl+Alt+Z ：工作区上传到暂存区
      Ctrl+Alt+G ：放弃工作区所有更改的代码，还原到上次暂存区的状态
 
 暂存区：
-     Ctrl+Alt+Z ：工作区上传到暂存区
+     Ctrl+Alt+M ：暂存区上传到历史区
      Ctrl+Alt+T ：暂存区更新到工作区
+
+历史区：
+     Ctrl+Alt+H ：历史区上传到远程仓库
 
 远程仓库：
      Ctrl+Alt+C ：远程仓库克隆到工作区
