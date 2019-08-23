@@ -92,6 +92,7 @@ create a new repository on the command line
         git clone
           远程仓库克隆到工作区
 
+如果两个同事同时修改一行代码会出现冲突，一般情况下，后面提交遇到了冲突解决冲突
 主干：一般都是线上的代码,基本没有bug
 分支：
      1、git branch
@@ -102,6 +103,8 @@ create a new repository on the command line
         切换分支
      4、git merge xxx(分支名)
         合并分支(把分支合并到主干上)
+     5、git push xxx(网址名) xxx(分支名)
+        本地分支上传到远程仓库对应的分支
 
 vs code 快捷键：
 基本流程：
