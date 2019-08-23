@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 跨域：JSONP是一种跨域的解决方案
+    // 同源和非同源：如果是非同源那么就是跨域
+    // 同源
+        // 1、协议相同
+        // 2、域名相同
+        // 3、端口号相同
+        
+    // ajax属于同源策略
+    // 浏览器属于非同源策略
+
+    // let xhr = new XMLHttpRequest();
+    // xhr.open("get", "http://matchweb.sports.qq.com/kbs/calendar?columnId=100000", false);
+    // xhr.onreadystatechange = () => {
+    //     if (xhr.readyState === 4 && /^2\d{2}/.test(xhr.status)) {
+    //         console.log(xhr.responseText)
+    //     }
+    // }
+    // xhr.send();
+
+    // script：script标签的src属性非同源
+    function fn(data) {
+        console.log(data)
+    }
+    // JSONP原理：利用了script的src非同源的策略机制，在地址末尾添加&callback=函数名 当后端将数据传送到客户端时，执行callback的函数，输出形参获取数据
+    // JSONP：后端需要对JSONP进行特殊处理，script只能get传输数据
+    // cors：普通的请求只需要后端设置一下响应头，在响应头添加"Access-contro;-Allow-Origin","路径"
+    $.ajax({
+        url: "url",
+        dataType: "jsonp",// 动态创建script
+        success:function(data){
+            
+        }
+    });
+</script>
+<script src="http://matchweb.sports.qq.com/kbs/calendar?columnId=100000&callback=fn"></script>
+</html>
