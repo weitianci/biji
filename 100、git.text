@@ -134,5 +134,5 @@ vs code 快捷键：
      Ctrl+Alt+S ：创建并选中分支
      Ctrl+Alt+F ：重命名已选中的分支
      Ctrl+Alt+D ：删除分支
-     Ctrl+Alt+G ：合并分支(把分支合并到主干上)
+     Ctrl+Alt+G ：合并分支(把分支合并到主干上,但数据不会合并)
      Ctrl+Alt+H ：发部分支
