@@ -101,9 +101,9 @@ create a new repository on the command line
         创建分支
      3、git checkout xxx(分支名)
         切换分支
-     4、git merge xxx(分支名)
+     4、git merge xxx(主分支名)
         合并分支(把分支合并到主干上)
-     5、git push xxx(网址名) xxx(分支名)
+     5、git push xxx(副分支) xxx(主分支名)
         本地分支上传到远程分支
      6、git push xxx(分支名) --delete
         删除远程分支
