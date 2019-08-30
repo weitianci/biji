@@ -113,7 +113,7 @@ vs code 快捷键：
      Ctrl+Alt+I ：创建git库
      Ctrl+Alt+M ：工作区上传到历史区（vs code可跳过缓存区，直接从工作区上传到历史区，第一次需要设置）
      Ctrl+Alt+R ：历史区和远程仓库连接
-     Ctrl+Alt+H ：历史区上传到远程仓库
+     Ctrl+Alt+N ：历史区上传到远程仓库
 
 工作区：
      Ctrl+Alt+Z ：工作区上传到暂存区
