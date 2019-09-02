@@ -8,7 +8,7 @@ npm install jquery --save           添加jquery
 npm install bootstrap@3.3.7 --save  添加bootstrap 3.3.7版本
 nom install less -g                 添加less到全局
 npm install axios                   添加axios
-npm install vue                     添加
+npm install vue                     添加vue
 
 less命令：
 lessc 1.less 1.css                  1.less文件编译成1.css文件
