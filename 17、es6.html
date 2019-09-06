@@ -12,6 +12,20 @@
 
 </body>
 <script>
+// JS模块化
+    // 1.js文件
+    // export将变量,函数，类导出
+    var name = "hello";
+    var age = "world"
+    export {name,age};
+    export function fn(){};
+    export class A{};
+
+    // 2.js文件
+    // import将1.js导出的变量,函数，类导入到2.js
+    // 调用2.js需要在script中加type:"model"属性
+    import {name,age,fn,A} from "./1.js"
+
 // 1、let
     // 1、let 不进行变量提升；在代码运行之前，对let的变量进行了声明
     // 2、let 声明的变量在同一个作用域下不可以重名
