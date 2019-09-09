@@ -18,11 +18,11 @@
 input事件：
     oninput 
     onblur       失去焦点
-    onofocus     获取焦点
+    onfocus      获取焦点
 
 input属性：
     autofocus    自动获取鼠标焦点
-    placehoder   文本框默认值
+    placeholder  文本框默认值
 
 HTML事件:
     onload       文档加载完成
