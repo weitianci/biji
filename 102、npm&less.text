@@ -96,3 +96,23 @@ node命令：
     server.listen(8000,function(){
         // 当监听8000端口号成功之后，会默认调用这个函数
     })
+
+    let express = require("express"); // express 是一个函数
+    let app = express();  // app是express的返回值，可以调用listen监听端口号
+    app.get("/login",function(req,res){
+        // 这是一个get请求，请求的地址是/login，后面跟着一个回调，该回调当请求login时会执行   
+        req.method : 请求方式
+        req.url,pathname : 请求路径
+        req.query : 请求的参数
+        req.params : 动态的路径参数
+        res.send("结束"); // 将服务器的数据传送给客户端，如果传递的不是字符串，会默认转成JSON格式字符串
+    });
+    app.get("/register",function(req,res){
+        res.send();
+    })
+    app.all("/order",function(){
+        // 不管是什么样的请求方式，只要path是order就会执行
+    });
+    app.listen(8000,function(){
+        // 当监听8000端口号成功之后，会默认调用这个函数
+    });
