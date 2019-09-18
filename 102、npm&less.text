@@ -1,0 +1,97 @@
+DOS:
+    如何在对应的路径下打开DOS窗口；
+    1. 直接在搜索框输入cmd,然后回车
+
+    命令:
+    1. mkdir + 文件夹名称  在当前的目录下创建一个文件夹；
+    2. cd  ../ : 回退 上一级目录；
+    3. del + 文件名： 删除目录下对应的文件
+    4. cd ../../  : 回退上上级目录
+    5. cd / : 回退到根目录；
+    6. cls  : 清空屏幕；
+    7. E: 切换磁盘；
+    8. mkdir + 文件夹名：创建一个文件夹
+
+npm命令：
+    npm install nrm -g     添加下载源
+    nrm ls                 查看下载源
+    nrm test               查看那个源速度快
+    nrm use xxx            选择xxx源
+
+    npm init                            创建npm
+    npm init -y                         初始化配置环境
+    npm install                         添加全部配置环境(需要在有package.json的文件夹内运行)
+    npm install xxx --save              xxx生产依赖
+    npm install xxx --save-dev          xxx开发依赖
+    npm install jquery --save           添加jquery
+    npm install bootstrap@3.3.7 --save  添加bootstrap 3.3.7版本
+    nom install less -g                 添加less到全局
+    npm install axios                   添加axios
+    npm install vue                     添加Vue
+    npm install vuex --save             添加VueX
+    npm install vue-router --save       添加vue-router
+
+    npm install yarn -g     添加yarn
+    yarn add xxx            添加xxx
+
+less命令：
+    lessc 1.less 1.css      1.less文件编译成1.css文件
+    @import "1.less"        导入1.less文件
+
+node命令：
+    在node环境中，没有window这个全局对象，但有global这个全局对象
+    node xxx.js                 node环境下执行js文件  
+    console.log(global)         global全局对象
+    console.log(__dirname)      父级文件夹的绝对路径
+    console.log(__filename)     当前文件的绝对路径
+
+    模块：
+    一个js文件就是一个模块，在每个js文件中的最外层，嵌套了一个自执行函数:(function (__dirname,__filename,require,module){})();
+    console.log(require)        方法，用于导入模块
+    module.exprots={}           导出对象里面的内容
+    let y = require('./2.js')   .js可以省略，接收2.js导出的内容，没有导出的内容就返回一个空对象
+ 
+    let fs = readFile("fs")
+    1、readFile         fs文件操作模块,可以修改文件内容。读取文件内容，前端js不可以修改或者是读取本地的资源文件
+    urf-8代表了格式，如果没有默认输出buffer对应的值(buffer由数字和字母组成 0-9 a-f,每个数字和字母对应一个buffer值，每个汉字对应3个buffer值)
+        fs.readFile("./xxx.text","utf-8",function(err,data){
+            // 这个函数异步执行，同步执行完成后，再执行该回调函数
+            // 第一个形参代表报错信息（如果报错：返回报错信息）
+            // 第二个形参代表路径文件里的数据（如果报错：返回undefined）
+        })
+    
+    2、readFileSync     同步读取文件的内容，将读取的内容作为函数的返回值返回给自定义创建的变量
+        let con = fs.readFileSync("./xxx.text","utf-8");
+
+    3、writeFile        异步覆盖路径文件内的内容
+        fs.writeFile("./xxx.text","内容","utf-8",function(err){
+            // 形参代表报错信息
+        })
+
+    4、writeFileSync    同步覆盖路径文件内的内容
+        fs.writeFileSync("./xxx.text","内容","utf-8");
+
+    5、appendFile       向文件的尾部追加文件内容
+        fs.appendFile("./xxx.text","内容","utf-8",function(err){
+            // 形参代表报错信息
+        })
+
+    6、appendFileSync
+        fs.appendFileSync("./xxx.text","内容","utf-8");
+
+    let http = require("http");  // 创建一个监听服务
+    let url = require("url");   // 处理路径url的模块
+    http.createServer(function (req.res){
+        //客户端访问一次，就执行一次
+        // 第一个形参代表：请求信息
+        // 第二个形参代表：响应信息
+        console.log(req.url); // 代表请求路径
+        console.log(url.parse(req.url.true)); // url.parse：用于处理路径的地址以及参数 加上 true 会将问号后面的参数解析成对象
+        req.end(); // 结束请求 可以设置参数，将服务器准备的数据传送给客户端
+    })
+    // 当客户访问8000端口时，会默认执行createServer中的函数
+    // 0-65535个端口
+    // 一个电脑可以启动多个端口的服务，但是一个端口只能启动一个服务，重复使用同一个端口，会出现报错
+    server.listen(8000,function(){
+        // 当监听8000端口号成功之后，会默认调用这个函数
+    })
