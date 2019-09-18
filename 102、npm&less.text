@@ -30,6 +30,7 @@ npm命令：
     npm install vue                     添加Vue
     npm install vuex --save             添加VueX
     npm install vue-router --save       添加vue-router
+    npm install express --save          添加express
 
     npm install yarn -g     添加yarn
     yarn add xxx            添加xxx
@@ -71,12 +72,12 @@ node命令：
     4、writeFileSync    同步覆盖路径文件内的内容
         fs.writeFileSync("./xxx.text","内容","utf-8");
 
-    5、appendFile       向文件的尾部追加文件内容
+    5、appendFile       异步向文件的尾部追加文件内容
         fs.appendFile("./xxx.text","内容","utf-8",function(err){
             // 形参代表报错信息
         })
 
-    6、appendFileSync
+    6、appendFileSync   同步向文件的尾部追加文件内容
         fs.appendFileSync("./xxx.text","内容","utf-8");
 
     let http = require("http");  // 创建一个监听服务
