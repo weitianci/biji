@@ -31,6 +31,7 @@ npm命令：
     npm install vuex --save             添加VueX
     npm install vue-router --save       添加vue-router
     npm install express --save          添加express
+    npm install create-react-app -g     添加react到全局
 
     npm install yarn -g     添加yarn
     yarn add xxx            添加xxx
